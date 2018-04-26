@@ -1,0 +1,1 @@
+/media/kenway/Dev/workspace/meteor-react-leaderboard/.gitignore

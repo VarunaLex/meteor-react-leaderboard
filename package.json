@@ -1,0 +1,32 @@
+{
+  "name": "meteor-react-leaderboard",
+  "version": "1.0.0",
+  "description": "Leader Board app built with react and meteor",
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.36",
+    "meteor-node-stubs": "^0.3.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "strat": "meteor run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VarunaLex/meteor-react-leaderboard.git"
+  },
+  "keywords": [
+    "meteor",
+    "react",
+    "tutorial",
+    "leader",
+    "board"
+  ],
+  "author": "Varuna Eeriyaulla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VarunaLex/meteor-react-leaderboard/issues"
+  },
+  "homepage": "https://github.com/VarunaLex/meteor-react-leaderboard#readme"
+}
