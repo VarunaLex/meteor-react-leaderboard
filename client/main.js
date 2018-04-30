@@ -10,6 +10,6 @@ Meteor.startup(function () {
     Tracker.autorun(() => {
         let players = Players.find({}, {sort: {score: -1}}).fetch();
         let title = "React Meteor Leader-board app";
-        ReactDOM.render(<App title={title} players={players}/>, document.getElementById('app'));
+        ReactDOM.render(<App title={title} players={players} />, document.getElementById('app'));
     });
 });
