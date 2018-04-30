@@ -10,7 +10,9 @@ let renderPlayers = (playerList) => {
         <div key={player._id}>
             <p>
                 Player Name : {player.name} has scored : {player.score} 
-                <button onClick={() => Players.remove({_id: player._id})}> &times; </button>
+                <button onClick={() => Players.update(player._id, {$inc : {score: 1}})}> +1 </button>
+                <button onClick={() => Players.update(player._id, {$inc: {score: -1} })}> -1 </button>
+                <button onClick={() => Players.remove(player._id)}> &times; </button>
             </p>
         </div>);
     })
@@ -25,7 +27,7 @@ const handleSubmit = (e) => {
 
     Players.insert({
         name: playerName,
-        score: playerScore
+        score: 0
     });
 };
 
