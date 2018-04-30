@@ -2,7 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {Meteor} from "meteor/meteor";
 import { Tracker } from "meteor/tracker";
+
 import Players from './../imports/api/players';
+import TitleBar from "./../imports/ui/components/TitleBar";
 
 let renderPlayers = (playerList) => {
     return playerList.map((player) => {
@@ -20,10 +22,8 @@ let renderPlayers = (playerList) => {
 
 const handleSubmit = (e) => {
     let playerName = e.target.playerName.value;
-    let playerScore = e.target.playerScore.value;
     e.preventDefault();
     if (playerName) e.target.playerName.value = '';
-    if (playerScore) e.target.playerScore.value = '';
 
     Players.insert({
         name: playerName,
@@ -34,13 +34,13 @@ const handleSubmit = (e) => {
 Meteor.startup(function () {
     Tracker.autorun(() => {
         let players = Players.find().fetch();
+        let title = "React Meteor Leader-board app";
         let jsx = (
             <div>
-                <p>Hello</p>
+                <TitleBar title={title} />
                 Dinamic Render : {renderPlayers(players)}
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="playerName" placeholder="Player Name" />
-                    <input type="text" name="playerScore" placeholder="Player Score" />
                     <input type="submit" value="Add" />
                 </form>
             </div>
