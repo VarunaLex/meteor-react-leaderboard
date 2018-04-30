@@ -4,23 +4,12 @@ import {Meteor} from "meteor/meteor";
 import { Tracker } from "meteor/tracker";
 
 import Players from './../imports/api/players';
-import TitleBar from "./../imports/ui/components/TitleBar";
-import AddPlayer from "./../imports/ui/components/AddPlayer";
-import PlayerList from "./../imports/ui/components/PlayerList";
-
+import App from "./../imports/ui/components/App";
 
 Meteor.startup(function () {
     Tracker.autorun(() => {
-        let players = Players.find().fetch();
+        let players = Players.find({}, {sort: {score: -1}}).fetch();
         let title = "React Meteor Leader-board app";
-        let jsx = (
-            <div>
-                <TitleBar title={title} />
-                <PlayerList players={players} />
-                <AddPlayer />
-            </div>
-        );
-        ReactDOM.render(jsx, document.getElementById('app'));
-    
+        ReactDOM.render(<App title={title} players={players}/>, document.getElementById('app'));
     });
 });
