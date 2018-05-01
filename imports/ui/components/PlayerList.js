@@ -1,13 +1,18 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import Players from "./../../api/players";
+import FlipMove from 'react-flip-move';
+import {Players} from "./../../api/players";
 import Player from "./Player";
 
 
 export default class PlayerList extends React.Component{
     renderPlayers() {
         if (this.props.players.length === 0){
-            return <p> - Add first player -</p>
+            return (
+                <div className="item">
+                    <p className="message"> - Add first player -</p>
+                </div>
+            )
         }
         else {
             return this.props.players.map((player) => {
@@ -19,7 +24,9 @@ export default class PlayerList extends React.Component{
     render(){
         return (
             <div>
-                {this.renderPlayers()}
+                <FlipMove duration={300} easing="ease-out">
+                    {this.renderPlayers()}
+                </FlipMove>
             </div>
         )
     }

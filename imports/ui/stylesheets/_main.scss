@@ -1,0 +1,33 @@
+/** SCSS */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: rgb(219, 219, 219);
+    color: rgb(87, 87, 87);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+}
+
+input, button {
+    font-size: 1.6rem;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 2.4rem;
+}
+
+@import './components/wrapper';
+@import './components/title-bar';
+@import './components/item';
+@import './components/button';
+@import './components/form';
+@import './components/player';

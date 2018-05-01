@@ -1,5 +1,5 @@
 import React from "react";
-import Players from "./../../api/players";
+import {Players} from "./../../api/players";
 
 export default class AddPalyer extends React.Component{
     handleSubmit (e) {
@@ -16,10 +16,12 @@ export default class AddPalyer extends React.Component{
     }
     render(){
         return (
-            <form onSubmit={this.handleSubmit.bind(this)}>
-                <input type="text" name="playerName" placeholder="Player Name" />
-                <input type="submit" value="Add" />
-            </form>
+            <div className="item">
+                <form className="form" onSubmit={this.handleSubmit.bind(this)}>
+                    <input className="input" type="text" name="playerName" placeholder="Player Name" />
+                    <input type="submit" value="Add Player" className="button" />
+                </form>
+            </div>
         )
     }
 }
